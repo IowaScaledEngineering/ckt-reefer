@@ -1,0 +1,4 @@
+schematics ckt-reefer.sch
+output-name ../pcb/ckt-reefer
+skip-m4
+elements-dir ../../../footprints
