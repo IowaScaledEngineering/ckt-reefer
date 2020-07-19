@@ -9,7 +9,7 @@ Grid[500.000000 0.0000 0.0000 0]
 PolyArea[200000000.000000]
 Thermal[0.500000]
 DRC[7.00mil 5.00mil 8.00mil 6.00mil 12.00mil 6.00mil]
-Flags("showdrc,rubberband,nameonpcb,uniquename,clearnew,snappin")
+Flags("showdrc,rubberband,nameonpcb,clearnew")
 Groups("1,c:2,s:3")
 Styles["Signal,10.00mil,24.00mil,12.00mil,10.00mil:Power,25.00mil,60.00mil,35.00mil,10.00mil:Fat,40.00mil,60.00mil,35.00mil,10.00mil:Skinny,8.00mil,24.00mil,12.00mil,10.00mil"]
 
@@ -805,6 +805,8 @@ Via[2575.00mil 290.00mil 24.00mil 20.00mil 0.0000 12.00mil "" ""]
 Via[2670.00mil 322.60mil 24.00mil 20.00mil 0.0000 12.00mil "" ""]
 Via[2670.00mil 290.00mil 24.00mil 20.00mil 0.0000 12.00mil "" ""]
 Via[1445.00mil 400.00mil 24.00mil 20.00mil 0.0000 12.00mil "" "thermal(1S)"]
+Via[970.00mil 470.00mil 24.00mil 20.00mil 0.0000 12.00mil "" "thermal(0S,1S)"]
+Via[945.00mil 450.00mil 24.00mil 20.00mil 0.0000 12.00mil "" "thermal(0S,1S)"]
 
 Element["" "SOT23" "U4" "unknown" 151.00mil 557.00mil 121.00mil -108.00mil 0 100 ""]
 (
@@ -891,18 +893,6 @@ Element["" "LTC_SC6" "U1" "unknown" 910.00mil 370.00mil 89.56mil -30.00mil 0 100
 
 	)
 
-Element["" "XPL2010" "L1" "6.8uH" 925.00mil 230.00mil -125.00mil -80.00mil 0 100 ""]
-(
-	Pad[26.50mil -23.50mil 26.50mil 23.50mil 24.00mil 20.00mil 30.00mil "1" "1" "square,edge2"]
-	Pad[-26.50mil -23.50mil -26.50mil 23.50mil 24.00mil 20.00mil 30.00mil "2" "2" "square,edge2"]
-	ElementLine [50.00mil -50.00mil 50.00mil 50.00mil 10.00mil]
-	ElementLine [-50.00mil -50.00mil 50.00mil -50.00mil 10.00mil]
-	ElementLine [-50.00mil -50.00mil -50.00mil 50.00mil 10.00mil]
-	ElementLine [-50.00mil 50.00mil 50.00mil 50.00mil 10.00mil]
-	ElementArc [65.00mil -65.00mil 5.00mil 5.00mil 180 360 10.00mil]
-
-	)
-
 Element["" "0805" "C4" "10uF" 59.5521mm 225.00mil -25.64mil -96.50mil 0 100 ""]
 (
 	Pad[-35.43mil -3.93mil -35.43mil 3.93mil 51.18mil 20.00mil 57.18mil "1" "1" "square"]
@@ -969,6 +959,18 @@ Element["" "0805" "C3" "0.1uF" 2260.00mil 510.00mil -20.64mil -96.50mil 0 100 ""
 	Pad[-35.43mil -3.93mil -35.43mil 3.93mil 51.18mil 20.00mil 57.18mil "2" "2" "square"]
 	ElementLine [-3.93mil 27.55mil 3.93mil 27.55mil 10.00mil]
 	ElementLine [-3.93mil -27.55mil 3.93mil -27.55mil 10.00mil]
+
+	)
+
+Element["" "XPL2010" "L1" "6.8uH" 925.00mil 210.00mil -125.00mil -80.00mil 0 100 ""]
+(
+	Pad[26.50mil -23.50mil 26.50mil 23.50mil 24.00mil 20.00mil 30.00mil "1" "1" "square,edge2"]
+	Pad[-26.50mil -23.50mil -26.50mil 23.50mil 24.00mil 20.00mil 30.00mil "2" "2" "square,edge2"]
+	ElementLine [50.00mil -50.00mil 50.00mil 50.00mil 10.00mil]
+	ElementLine [-50.00mil -50.00mil 50.00mil -50.00mil 10.00mil]
+	ElementLine [-50.00mil -50.00mil -50.00mil 50.00mil 10.00mil]
+	ElementLine [-50.00mil 50.00mil 50.00mil 50.00mil 10.00mil]
+	ElementArc [65.00mil -65.00mil 5.00mil 5.00mil 180 360 10.00mil]
 
 	)
 Layer(1 "top")
@@ -1053,6 +1055,7 @@ Layer(1 "top")
 	Line[56.5041mm 510.00mil 1510.00mil 510.00mil 10.00mil 20.00mil "clearline"]
 	Line[1510.00mil 510.00mil 1490.00mil 490.00mil 10.00mil 20.00mil "clearline"]
 	Line[1490.00mil 490.00mil 1490.00mil 390.00mil 10.00mil 20.00mil "clearline"]
+	Line[910.00mil 370.00mil 910.00mil 455.00mil 15.00mil 20.00mil ""]
 	Polygon("clearpoly")
 	(
 		[1140.00mil 555.00mil] [1075.00mil 555.00mil] [1075.00mil 385.00mil] [1140.00mil 385.00mil] 
@@ -1072,6 +1075,11 @@ Layer(1 "top")
 	Polygon("clearpoly")
 	(
 		[2350.00mil 190.00mil] [2510.00mil 190.00mil] [2510.00mil 375.00mil] [2350.00mil 375.00mil] 
+	)
+	Polygon("clearpoly")
+	(
+		[915.00mil 495.00mil] [915.00mil 485.00mil] [900.00mil 470.00mil] [900.00mil 420.00mil] [980.00mil 420.00mil] 
+		[1045.00mil 485.00mil] [1045.00mil 495.00mil] 
 	)
 )
 Layer(2 "bottom")
@@ -1105,8 +1113,8 @@ Layer(5 "silk")
 	Line[140.00mil 260.00mil 210.00mil 260.00mil 20.00mil 20.00mil "clearline"]
 	Line[1245.00mil 545.00mil 1245.00mil 545.00mil 30.00mil 20.00mil "clearline"]
 	Text[385.00mil 515.00mil 0 140 "(C) 2020" "clearline"]
-	Text[135.00mil 120.00mil 0 140 "CC BY-SA" "clearline"]
-	Text[1580.00mil 120.00mil 0 140 "CKT-REEFER  v1.0" "clearline"]
+	Text[130.00mil 110.00mil 0 140 "CC BY-SA" "clearline"]
+	Text[1580.00mil 110.00mil 0 140 "CKT-REEFER  v1.0" "clearline"]
 )
 NetList()
 (
