@@ -123,28 +123,28 @@ int main(void)
 				playBell = 0;
 				TIMSK = 0;
 
-/*				GIMSK |= _BV(PCIE);*/
-/*				PCMSK |= _BV(PCINT3);*/
-/*				wdt_reset();*/
-/*				wdt_disable();                         // Disable watchdog so it doesn't reset us in sleep*/
-/*				set_sleep_mode(SLEEP_MODE_PWR_DOWN);*/
-/*				sleep_enable();*/
-/*				sei();*/
-/*				sleep_cpu();*/
-/*				cli();*/
-/*				PCMSK &= ~_BV(PCINT3);*/
-/*				sleep_disable();*/
-/*				wdt_reset();*/
-/*				wdt_enable(WDTO_1S);          // Reenable watchdog*/
-/*				wdt_reset();*/
-/*				sei();*/
+				GIMSK |= _BV(PCIE);
+				PCMSK |= _BV(PCINT3);
+				wdt_reset();
+				wdt_disable();                         // Disable watchdog so it doesn't reset us in sleep
+				set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+				sleep_enable();
+				sei();
+				sleep_cpu();
+				cli();
+				PCMSK &= ~_BV(PCINT3);
+				sleep_disable();
+				wdt_reset();
+				wdt_enable(WDTO_1S);          // Reenable watchdog
+				wdt_reset();
+				sei();
 				
-				pin = PINB & _BV(PB3);
-				if(!pin && oldPin)  // Falling edge detect
-				{
+//				pin = PINB & _BV(PB3);
+//				if(!pin && oldPin)  // Falling edge detect
+//				{
 					state = 1;  // Go to playing
-				}
-				oldPin = pin;
+//				}
+//				oldPin = pin;
 				break;
 			case 1:
 				// Playing
@@ -155,7 +155,7 @@ int main(void)
 				pin = PINB & _BV(PB3);
 				if(!pin && oldPin)  // Falling edge detect
 				{
-					state = 0;  // Go to off
+//					state = 0;  // Go to off
 				}
 				oldPin = pin;
 				break;
